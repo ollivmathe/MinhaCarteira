@@ -1,6 +1,6 @@
 package Entities;
 
-public class Despesa extends Transacao{
+public class Despesa extends Transacao {
     
     public Despesa(String descricao, double valor, String data) {
         super(descricao, valor, data);
