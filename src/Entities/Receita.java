@@ -13,6 +13,6 @@ public class Receita extends Transacao implements Tributavel {
 
     @Override
     public void exibirDetalhes() {
-        System.out.printf("Descrição: %s\nValor: +%.2f\nData: %s\nImposto Calculado: %.2f", getDescricao(), getValor(), getData(), calcularImposto());
+        System.out.printf("Descrição: %s\nValor: +%.2f\nData: %s\n", getDescricao(), getValor(), getData());
     }
 }

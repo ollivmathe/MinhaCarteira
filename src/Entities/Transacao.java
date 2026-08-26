@@ -1,6 +1,6 @@
 package Entities;
 
-abstract class Transacao {
+public abstract class Transacao {
     private String descricao;
     private double valor;
     private String data;
