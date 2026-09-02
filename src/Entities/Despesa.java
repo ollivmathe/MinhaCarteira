@@ -1,8 +1,10 @@
 package Entities;
 
+import Exceptions.ValorInvalidoException;
+
 public class Despesa extends Transacao {
     
-    public Despesa(String descricao, double valor, String data) {
+    public Despesa(String descricao, double valor, String data) throws ValorInvalidoException {
         super(descricao, valor, data);
     }
 

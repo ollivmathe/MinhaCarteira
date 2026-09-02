@@ -1,8 +1,10 @@
 package Entities;
 
+import Exceptions.ValorInvalidoException;
+
 public class Receita extends Transacao implements Tributavel {
 
-    public Receita(String descricao, double valor, String data) {
+    public Receita(String descricao, double valor, String data) throws ValorInvalidoException {
         super(descricao, valor, data);
     }
 
