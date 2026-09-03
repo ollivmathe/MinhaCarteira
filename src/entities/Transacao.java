@@ -1,6 +1,6 @@
-package Entities;
+package entities;
 
-import Exceptions.ValorInvalidoException;
+import exceptions.ValorInvalidoException;
 
 public abstract class Transacao {
     private String descricao;
@@ -13,11 +13,7 @@ public abstract class Transacao {
             throw new ValorInvalidoException("O valor da transação deve ser maior que zero.");
         }
 
-        if (descricao == null || descricao.trim().isEmpty()) {
-            throw new IllegalArgumentException("A descrição não pode ser vazia.");
-        }
-
-        this.descricao = descricao;
+        setDescricao(descricao);
         this.valor = valor;
         this.data = data;
     }
@@ -27,6 +23,9 @@ public abstract class Transacao {
     }
 
     public void setDescricao(String descricao) {
+        if (descricao == null || descricao.trim().isEmpty()) {
+            throw new IllegalArgumentException("A descrição não pode ser vazia.");
+        }
         this.descricao = descricao;
     }
 

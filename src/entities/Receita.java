@@ -1,6 +1,6 @@
-package Entities;
+package entities;
 
-import Exceptions.ValorInvalidoException;
+import exceptions.ValorInvalidoException;
 
 public class Receita extends Transacao implements Tributavel {
 
