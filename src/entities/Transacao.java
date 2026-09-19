@@ -1,8 +1,9 @@
 package entities;
 
+import java.io.Serializable;
 import exceptions.ValorInvalidoException;
 
-public abstract class Transacao {
+public abstract class Transacao implements Serializable {
     private String descricao;
     private double valor;
     private String data;
