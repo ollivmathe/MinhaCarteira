@@ -1,6 +1,6 @@
 import exceptions.ValorInvalidoException;
+import utils.GerenciadorArquivos;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import entities.Despesa;
@@ -11,7 +11,9 @@ import entities.Tributavel;
 public class Sistema {
 
     public static void main(String[] args) {
-        List<Transacao> transacoes = new ArrayList<>();
+        List<Transacao> transacoes = GerenciadorArquivos.carregarDados();
+        System.out.printf("Total de transações carregadas: %d\n", transacoes.size());
+
         try {
             Despesa contaDeLuz = new Despesa("Conta de Luz", 150.00, "25/08/2026");
             Receita salarioMensal = new Receita("Salário Mensal", 5000.00, "25/08/2026");
@@ -50,5 +52,8 @@ public class Sistema {
         } catch (ValorInvalidoException | IllegalArgumentException e) {
             System.out.printf("Erro de validação: %s\n", e.getMessage());
         }
+
+        GerenciadorArquivos.salvarDados(transacoes);
+        GerenciadorArquivos.gerarExtrato(transacoes);
     }
 }
